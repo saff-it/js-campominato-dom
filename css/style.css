@@ -32,6 +32,11 @@ div.square{
     
 }
 
+div.red-bomb{
+    background-color: red;
+
+}
+
 div.square.skyblue{
     background-color: cyan;
 }
