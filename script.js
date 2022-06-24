@@ -1,11 +1,14 @@
 
 const playButton = document.querySelector('.play-btn');
 const squareContainer = document.querySelector('.square-container');
-
+let arrayBomb;
 
 playButton.addEventListener('click', function(){
     
     squareContainer.innerHTML = "";
+
+    arrayBomb = getRandomBombNumber(1, 100);
+    console.log(arrayBomb);
 
     for ( let i = 0; i < 100; i++) {
     
@@ -19,14 +22,17 @@ playButton.addEventListener('click', function(){
 });
 
 
+
 function squareAdd(){
     const newSquare = document.createElement('div');
     newSquare.classList.add('square');
     newSquare.addEventListener('click', function(){
         
-        let listHundred = 
+        const squareNumber = parseInt(newSquare.innerHTML);
 
-        if (arrayBomb.includes()) {
+        if (arrayBomb.includes(squareNumber)) {
+            newSquare.classList.toggle('red-bomb');
+            console.log("hai cliccato una Bomba!");
 
 
         } else {
@@ -41,8 +47,8 @@ function squareAdd(){
 }
 
 
-const arrayBomb = getRandomBombNumber(1, 100);
-console.log(arrayBomb);
+
+
 
 function getRandomBombNumber(minNum, maxNum) {
     let randomNumber;
