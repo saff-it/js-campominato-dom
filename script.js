@@ -23,7 +23,13 @@ function squareAdd(){
     const newSquare = document.createElement('div');
     newSquare.classList.add('square');
     newSquare.addEventListener('click', function(){
-    
+        
+        if () {
+
+
+        } else {
+
+        }
         newSquare.classList.toggle('skyblue');
         console.log("hai cliccato un tasto!");
     
@@ -33,26 +39,24 @@ function squareAdd(){
 }
 
 
-// const arrayBomb = [getRandomBombNumber(1, 100)];
+const arrayBomb = getRandomBombNumber();
 
 
 function getRandomBombNumber(blacklist, minNum, maxNum) {
     let randomNumber;
-    let repatedNum = false;
-
-    let index = 0;
+    const blacklist = [];
 
     // continua a girare finche non mi trovi 16 numeri diversi compresi tra 1 e 100
-    while (index < 16 && repatedNum === false) {
+    while (blacklist.lenght < 16) {
         
         randomNumber = Math.floor(Math.random() * (maxNum - minNum) + minNum);
         console.log(randomNumber);
-        i++;
+        
 
         if (blacklist.includes(randomNumber) === false) {
-            repatedNum = true;
+            blacklist.push(randomNumber);
         };
     };
 
-    return randomNumber;
+    return blacklist;
 }
